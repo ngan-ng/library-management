@@ -1,9 +1,16 @@
 package com.application.courselibrary.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Set;
 import java.util.HashSet;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "authors")
 public class Author {
