@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -45,6 +46,12 @@ public class Book {
                 joinColumns = {@JoinColumn(name = "book_id")},
                 inverseJoinColumns = {@JoinColumn(name = "publisher_id")})
     private Set<Publisher> publishers = new HashSet<Publisher>();
+
+    public Book(String isbn, String name, String description) {
+        this.isbn = isbn;
+        this.name = name;
+        this.description = description;
+    }
 
     public void removePublisher(Publisher publisher) {
         this.publishers.remove(publisher);

@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,4 +25,8 @@ public class Publisher {
 
     @ManyToMany(mappedBy = "publishers", cascade = CascadeType.ALL)
     private Set<Book> books = new HashSet<Book>();
+
+    public Publisher(String name) {
+        this.name = name;
+    }
 }
