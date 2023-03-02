@@ -28,4 +28,11 @@ public class BookController {
         model.addAttribute("book", book);
         return "list-book";
     }
+
+    @GetMapping("/remove-book/{id}")
+    public String deleteBook(@PathVariable Long id, Model model){
+        bookService.deleteBook(id);
+        model.addAttribute("books", bookService.findAllBooks());
+        return "books";
+    }
 }
