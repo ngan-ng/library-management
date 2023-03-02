@@ -18,16 +18,16 @@ public class PublisherService {
         return publisherRepository.findAll();
     }
 
-    public Publisher findAuthorById(Long id) {
+    public Publisher findPublisherById(Long id) {
         Publisher publisher = publisherRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found."));
         return publisher;
     }
 
-    public void createAuthor(Publisher publisher) {
+    public void createPublisher(Publisher publisher) {
         publisherRepository.save(publisher);
     }
 
-    public void deleteAuthor(Long id) {
+    public void deletePublisher(Long id) {
         Publisher publisher = publisherRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found."));
         publisherRepository.deleteById(publisher.getId());
     }

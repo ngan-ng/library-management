@@ -14,20 +14,20 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public List<Category> findAllPublishers() {
+    public List<Category> findAllCategories() {
         return categoryRepository.findAll();
     }
 
-    public Category findAuthorById(Long id) {
+    public Category findCategoryById(Long id) {
         Category category = categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found."));
         return category;
     }
 
-    public void createAuthor(Category publisher) {
+    public void createCategory(Category publisher) {
         categoryRepository.save(publisher);
     }
 
-    public void deleteAuthor(Long id) {
+    public void deleteCategory(Long id) {
         Category category = categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found."));
         categoryRepository.deleteById(category.getId());
     }
