@@ -27,6 +27,10 @@ public class CategoryService {
         categoryRepository.save(publisher);
     }
 
+    public void updateCategory(Category publisher) {
+        categoryRepository.save(publisher);
+    }
+
     public void deleteCategory(Long id) {
         Category category = categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found."));
         categoryRepository.deleteById(category.getId());

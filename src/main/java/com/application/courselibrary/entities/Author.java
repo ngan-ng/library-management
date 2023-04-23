@@ -11,6 +11,7 @@ import java.util.HashSet;
 @Getter
 @Setter
 @NoArgsConstructor
+
 @Entity
 @Table(name = "authors")
 public class Author {
